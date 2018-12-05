@@ -23,8 +23,32 @@ class App extends Component {
       word: '',
       boxWithItem: '',
       boxes: {
-        box1: ['Loafer', 'Spatula'],
-        box2: ['Mouse', 'Sunglasses'],
+        box1: [
+          'Loafer','Spatula', 'Loafer','Spatula','Loafer','Spatula','Loafer','Spatula','Loafer','Spatula',
+          'Loafer','Spatula','Loafer','Spatula','Loafer','Loafer','Spatula','Loafer','Spatula','Loafer',
+          'Spatula','Loafer','Spatula','Loafer','Spatula','Loafer','Spatula','Loafer','Spatula','Loafer'
+        ],
+        box2: [
+          'Mouse', 'Sunglasses',
+          'Loafer','Spatula','Loafer','Spatula','Loafer','Loafer','Spatula','Loafer','Spatula','Loafer',
+          'Spatula','Loafer','Spatula','Loafer','Spatula','Loafer','Spatula','Loafer','Spatula','Loafer',
+          'Loafer','Spatula','Loafer','Spatula','Loafer','Loafer','Spatula','Loafer','Spatula','Loafer',
+          'Spatula','Loafer','Spatula','Loafer','Spatula','Loafer','Spatula','Loafer','Spatula','Loafer',
+          'Loafer','Spatula','Loafer','Spatula','Loafer','Loafer','Spatula','Loafer','Spatula','Loafer',
+          'Loafer','Spatula','Loafer','Spatula','Loafer','Loafer','Spatula','Loafer','Spatula','Loafer',
+          'Spatula','Loafer','Spatula','Loafer','Spatula','Loafer','Spatula','Loafer','Spatula','Loafer',
+          'Spatula','Loafer','Spatula','Loafer','Spatula','Loafer','Spatula','Loafer','Spatula','Loafer',
+          'Loafer','Spatula','Loafer','Spatula','Loafer','Loafer','Spatula','Loafer','Spatula','Loafer',
+          'Spatula','Loafer','Spatula','Loafer','Spatula','Loafer','Spatula','Loafer','Spatula','Loafer',
+          'Loafer','Spatula','Loafer','Spatula','Loafer','Loafer','Spatula','Loafer','Spatula','Loafer',
+          'Spatula','Loafer','Spatula','Loafer','Spatula','Loafer','Spatula','Loafer','Spatula','Loafer',
+          'Loafer','Spatula','Loafer','Spatula','Loafer','Loafer','Spatula','Loafer','Spatula','Loafer',
+          'Spatula','Loafer','Spatula','Loafer','Spatula','Loafer','Spatula','Loafer','Spatula','Loafer',
+          'Loafer','Spatula','Loafer','Spatula','Loafer','Loafer','Spatula','Loafer','Spatula','Loafer',
+          'Spatula','Loafer','Spatula','Loafer','Spatula','Loafer','Spatula','Loafer','Spatula','Loafer',
+          'Loafer','Spatula','Loafer','Spatula','Loafer','Loafer','Spatula','Loafer','Spatula','Loafer',
+          'Spatula','Loafer','Spatula','Loafer','Spatula','Loafer','Spatula','Loafer','Spatula','Loafer'
+        ],
         box3: ['Pen', 'Toilet Paper'],
       },
     };
@@ -99,50 +123,81 @@ class App extends Component {
 
     return (
       <div className="App">
-        <Navbar>
-          <h3>unpackit</h3>
-          <h1>Find my favorite item</h1>
-          <Navbar.Form>
-            <FormGroup>
-              <FormControl
-                onChange={e => {
-                  this.setState({ word: e.target.value.toUpperCase() });
-                }}
-                type="text"
-                placeholder="Search"
-              />
-            </FormGroup>{' '}
-            <Button type="submit" onClick={this.show}>
-              Submit
-            </Button>
-          </Navbar.Form>
-        </Navbar>
+        <div id="top of page">
+          <Navbar>
+            <h3>unpackit</h3>
+            <h1>Find my favorite item</h1>
+            <Navbar.Form>
+              <FormGroup>
+                <FormControl
+                  onChange={e => {
+                    this.setState({ word: e.target.value.toUpperCase() });
+                  }}
+                  type="text"
+                  placeholder="Search"
+                />
+              </FormGroup>{' '}
+              <Button type="submit" onClick={this.show}>
+                Submit
+              </Button>
+            </Navbar.Form>
+          </Navbar>
 
-        <Grid>
-          <Row>
-            {' '}
-            <Col xs={6} md={4}>
-              <Image
-                src="https://source.unsplash.com/0VGG7cqTwCo/250x250"
-                rounded
-              />
-            </Col>
-            <Col xs={6} md={4}>
-              <Image
-                src="https://source.unsplash.com/z9F_yK4Nmf8/250x250"
-                rounded
-              />
-            </Col>
-            <Col xs={6} md={4}>
-              <Image
-                src="https://source.unsplash.com/sxNt9g77PE0/250x250"
-                rounded
-              />
-            </Col>
-          </Row>
-        </Grid>
-        <div>
-          <h2>{there}</h2>
+          <Grid>
+            <Row>
+              {' '}
+              <Col xs={6} md={4}>
+                <Image
+                  src="https://source.unsplash.com/0VGG7cqTwCo/250x250"
+                  rounded
+                />
+              </Col>
+              <Col xs={6} md={4}>
+                <Image
+                  src="https://source.unsplash.com/z9F_yK4Nmf8/250x250"
+                  rounded
+                />
+              </Col>
+              <Col xs={6} md={4}>
+                <Image
+                  src="https://source.unsplash.com/sxNt9g77PE0/250x250"
+                  rounded
+                />
+              </Col>
+            </Row>
+          </Grid>
+          <div>
+            <h2>{there}</h2>
+          </div>
+        </div>
+        <div
+          id="search results"
+          style={{ display: 'flex', justifyContent: 'center' }}
+        >
+          <div
+            style={{ display: 'flex', flexDirection: 'column', width: '74%',textAlign: 'left' }}
+          >
+            <div >
+              {Object.keys(this.state.boxes)[0]}
+            </div>
+            <div >
+              {this.state.boxes.box1.join(', ')}
+            </div>
+            <br/>
+            <div >
+              {Object.keys(this.state.boxes)[1]}
+            </div>
+            <div >
+              {this.state.boxes.box2.join(', ')}
+            </div>
+            <br/>
+            <div >
+              {Object.keys(this.state.boxes)[2]}
+            </div>
+            <div >
+              {this.state.boxes.box3.join(', ')}
+            </div>
+          </div>
         </div>
       </div>
     );
